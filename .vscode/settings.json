@@ -18,5 +18,9 @@
         "titleBar.inactiveBackground": "#00242999",
         "titleBar.inactiveForeground": "#e7e7e799"
     },
-    "peacock.remoteColor": "#002429"
+    "peacock.remoteColor": "#002429",
+    "cSpell.words": [
+        "seedwork",
+        "uuidv"
+    ]
 }

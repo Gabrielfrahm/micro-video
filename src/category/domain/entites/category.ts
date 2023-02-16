@@ -1,3 +1,5 @@
+import UniqueEntityId from "../../../@seedwork/domain/unique-entity-id.vo";
+
 export type CategoryProperties = {
   name: string;
   description?: string;
@@ -6,10 +8,12 @@ export type CategoryProperties = {
 };
 
 export class Category {
-  constructor(public readonly props: CategoryProperties) {
+  public readonly id: UniqueEntityId;
+  constructor(public readonly props: CategoryProperties, id?: UniqueEntityId) {
+    this.id = id || new UniqueEntityId();
     this.props.description = this.description ?? null;
-    (this.props.is_active = this.is_active ?? true),
-      (this.props.created_at = this.created_at ?? new Date());
+    this.props.is_active = this.is_active ?? true;
+    this.props.created_at = this.created_at ?? new Date();
   }
 
   get name(): string {
