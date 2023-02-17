@@ -1,6 +1,6 @@
 import { Category } from "./category";
 
-import UniqueEntityId from "../../../@seedwork/domain/unique-entity-id.vo";
+import UniqueEntityId from "../../../@seedwork/domain/value-object/unique-entity-id.vo";
 
 describe("Category Unit Tests", () => {
   test("constructor of category", () => {
