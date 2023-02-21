@@ -1,4 +1,4 @@
-import ValidatorError from "../../../@seedwork/errors/validator.error";
+import ValidatorError from "../../../@seedwork/domain/errors/validator.error";
 import { Category } from "./category";
 
 describe("Category Integration Test", () => {

@@ -1,5 +1,5 @@
-import ValidatorError from "../../@seedwork/errors/validator.error";
-import ValidatorRules from "./validator-rules";
+import ValidatorError from "../../errors/validator.error";
+import ValidatorRules from "../validator-rules";
 
 type Values = {
   value: any;
