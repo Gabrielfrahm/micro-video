@@ -27,7 +27,7 @@ describe("Class validator fields unit test", () => {
     const validator = new StubValidatorFields();
     expect(validator.validate({ field: "value" })).toBeTruthy();
     expect(spyValidateSync).toHaveBeenCalled();
-    expect(validator.validatedData).toBe({ field: "value" });
+    expect(validator.validatedData).toStrictEqual({ field: "value" });
     expect(validator.errors).toBeNull();
   });
 });
