@@ -7,7 +7,7 @@ import {
   MaxLength,
 } from "class-validator";
 import ClassValidatorFields from "../../../@seedwork/domain/validators/class-validator-fields";
-import { CategoryProperties } from "../entites/category";
+import { CategoryProperties } from "../entities/category";
 
 export class CategoryRules {
   @MaxLength(255)
