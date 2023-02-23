@@ -62,7 +62,7 @@ export class SearchParams {
     this._per_page = _per_page;
   }
 
-  get sort() {
+  get sort(): string | null {
     return this._sort;
   }
   private set sort(value: string | null) {
@@ -70,7 +70,7 @@ export class SearchParams {
       value === null || value === undefined || value === "" ? null : `${value}`;
   }
 
-  get sort_dir() {
+  get sort_dir(): string | null {
     return this._sort_dir;
   }
   private set sort_dir(value: string | null) {
@@ -82,7 +82,7 @@ export class SearchParams {
     this._sort_dir = dir !== "asc" && dir !== "desc" ? "asc" : dir;
   }
 
-  get filter() {
+  get filter(): string | null {
     return this._filter;
   }
   private set filter(value: string | null) {
@@ -100,7 +100,7 @@ type SearchResultProps<E extends Entity, Filter> = {
   sort_dir: string | null;
   filter: Filter | null;
 };
-class SearchResult<E extends Entity, Filter = string> {
+export class SearchResult<E extends Entity, Filter = string> {
   readonly items: E[];
   readonly total: number;
   readonly current_page: number;
@@ -137,8 +137,9 @@ class SearchResult<E extends Entity, Filter = string> {
 export interface SearchableRepositoryInterface<
   E extends Entity,
   Filter = string,
-  SearchInput = SearchProps,
+  SearchInput = SearchParams,
   SearchOutput = SearchResult<E, Filter>
 > extends RepositoryInterface<E> {
+  sortableFields: string[];
   search(props: SearchInput): Promise<SearchOutput>;
 }
