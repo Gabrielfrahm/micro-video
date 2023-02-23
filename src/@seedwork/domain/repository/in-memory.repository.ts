@@ -89,7 +89,7 @@ export abstract class InMemorySearchableRepository<E extends Entity>
     sort: string | null,
     sort_dir: string | null
   ): Promise<E[]> {
-    if (sort || this.sortableFields.includes(sort)) {
+    if (!sort || !this.sortableFields.includes(sort)) {
       return items;
     }
     return [...items].sort((a, b) => {

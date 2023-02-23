@@ -1,4 +1,3 @@
-import { isRFC3339 } from "class-validator";
 import { SearchParams, SearchResult } from "../repository-contracts";
 
 describe("SearchParams Units Test", () => {

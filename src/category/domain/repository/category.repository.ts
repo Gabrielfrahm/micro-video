@@ -1,8 +1,27 @@
 import {
-  RepositoryInterface,
   SearchableRepositoryInterface,
-} from "@seedwork/domain/repository/repository-contracts";
+  SearchParams as DefaultSearchParams,
+  SearchResult as DefaultSearchResult,
+} from "../../../@seedwork/domain/repository/repository-contracts";
 import { Category } from "../entities/category";
 
-export default interface CategoryRepository
-  extends SearchableRepositoryInterface<Category, any, any> {}
+export namespace CategoryRepository {
+  export type Filter = string;
+
+  export class SearchParams extends DefaultSearchParams<Filter> {}
+
+  export class CategorySearchResult extends DefaultSearchResult<
+    Category,
+    Filter
+  > {}
+
+  export interface Repository
+    extends SearchableRepositoryInterface<
+      Category,
+      Filter,
+      SearchParams,
+      CategorySearchResult
+    > {}
+}
+
+export default CategoryRepository;
