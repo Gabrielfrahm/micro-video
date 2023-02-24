@@ -92,6 +92,7 @@ export abstract class InMemorySearchableRepository<E extends Entity>
     if (!sort || !this.sortableFields.includes(sort)) {
       return items;
     }
+
     return [...items].sort((a, b) => {
       if (a.props[sort] < b.props[sort]) {
         return sort_dir === "asc" ? -1 : 1;

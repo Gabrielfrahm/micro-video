@@ -1,10 +1,4 @@
-import {
-  IsNotEmpty,
-  IsNumber,
-  IsString,
-  IS_PHONE_NUMBER,
-  MaxLength,
-} from "class-validator";
+import { IsNotEmpty, IsNumber, IsString, MaxLength } from "class-validator";
 import ClassValidatorFields from "../class-validator-fields";
 
 class StubRules {
