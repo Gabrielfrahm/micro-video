@@ -20,7 +20,10 @@
     },
     "peacock.remoteColor": "#002429",
     "cSpell.words": [
+        "dtos",
         "seedwork",
+        "usecase",
+        "usecases",
         "uuidv"
     ]
 }
