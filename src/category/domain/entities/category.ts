@@ -11,8 +11,8 @@ export type CategoryProperties = {
 };
 
 export type UpdateCategory = {
-  name?: string;
-  description?: string;
+  name?: string | null;
+  description?: string | null;
 };
 
 export class Category extends Entity<CategoryProperties> {

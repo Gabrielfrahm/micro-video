@@ -1,19 +1,15 @@
+import UseCase from "../../../@seedwork/application/usecase";
 import { Category } from "../../../category/domain/entities/category";
 import CategoryRepository from "../../../category/domain/repository/category.repository";
 import { CategoryOutput } from "../dtos/category.dto";
+import CategoryOutputMapper from "../mappers/category-output.mapper";
 
-export default class CreateCategoryUseCase {
+export default class CreateCategoryUseCase implements UseCase<Input, Output> {
   constructor(private categoryRepository: CategoryRepository.Repository) {}
-  async execute(input: Input): Promise<output> {
+  async execute(input: Input): Promise<Output> {
     const entity = new Category(input);
     await this.categoryRepository.insert(entity);
-    return {
-      id: entity.id,
-      name: entity.name,
-      description: entity.description,
-      is_active: entity.is_active,
-      created_at: entity.created_at,
-    };
+    return CategoryOutputMapper.toOutPut(entity);
   }
 }
 
@@ -23,4 +19,4 @@ export type Input = {
   is_active?: boolean;
 };
 
-export type output = CategoryOutput;
+export type Output = CategoryOutput;
