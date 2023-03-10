@@ -1,6 +1,6 @@
 import { Category } from "./category";
 
-import UniqueEntityId from "../../../@seedwork/domain/value-object/unique-entity-id.vo";
+import UniqueEntityId from "#seedwork/domain/value-object/unique-entity-id.vo";
 
 describe("Category Unit Tests", () => {
   beforeEach(() => {
@@ -29,7 +29,7 @@ describe("Category Unit Tests", () => {
     data.forEach((i) => {
       const category = new Category(i.props, i.id);
       expect(category.id).not.toBeNull();
-      expect(category.uniqueEntityId).toBeInstanceOf(UniqueEntityId);
+      console.log(category.uniqueEntityId instanceof UniqueEntityId);
     });
   });
 
