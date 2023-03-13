@@ -1,3 +1,3 @@
 export default {
-  projects: ["<rootDir>/src/core", "<rootDir>/src/nest"],
+  projects: ["<rootDir>/src/@core", "<rootDir>/src/nest"],
 };
