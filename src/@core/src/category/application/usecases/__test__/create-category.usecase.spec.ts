@@ -3,11 +3,11 @@ import CreateCategoryUseCase from "../create-category.usecase";
 
 describe("create category use case unit test", () => {
   let repository: CategoryInMemoryRepository;
-  let useCase: CreateCategoryUseCase;
+  let useCase: CreateCategoryUseCase.UseCase;
 
   beforeEach(() => {
     repository = new CategoryInMemoryRepository();
-    useCase = new CreateCategoryUseCase(repository);
+    useCase = new CreateCategoryUseCase.UseCase(repository);
   });
 
   it("should create a category", async () => {

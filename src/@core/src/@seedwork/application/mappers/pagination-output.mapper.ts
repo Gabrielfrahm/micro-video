@@ -1,7 +1,7 @@
 import { SearchResult } from "../../../@seedwork/domain/repository/repository-contracts";
 import { PaginationOutputDto } from "../dtos/pagination-output.dto";
 
-export default class PaginationOutputMapper {
+export class PaginationOutputMapper {
   static toPaginationOutput(
     result: SearchResult<any>
   ): Omit<PaginationOutputDto, "items"> {
@@ -13,3 +13,5 @@ export default class PaginationOutputMapper {
     };
   }
 }
+
+export default PaginationOutputMapper;

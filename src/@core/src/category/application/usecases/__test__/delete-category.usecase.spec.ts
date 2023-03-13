@@ -4,11 +4,11 @@ import DeleteCategoryUseCase from "../delete-category.usecase";
 
 describe("delete category use case unit test", () => {
   let repository: CategoryInMemoryRepository;
-  let useCase: DeleteCategoryUseCase;
+  let useCase: DeleteCategoryUseCase.UseCase;
 
   beforeEach(() => {
     repository = new CategoryInMemoryRepository();
-    useCase = new DeleteCategoryUseCase(repository);
+    useCase = new DeleteCategoryUseCase.UseCase(repository);
   });
 
   it("should delete a category", async () => {

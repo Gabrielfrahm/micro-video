@@ -6,11 +6,11 @@ import GetCategoryUseCase from "../get-category.usecase";
 
 describe("get category use case unit test", () => {
   let repository: CategoryInMemoryRepository;
-  let useCase: GetCategoryUseCase;
+  let useCase: GetCategoryUseCase.UseCase;
 
   beforeEach(() => {
     repository = new CategoryInMemoryRepository();
-    useCase = new GetCategoryUseCase(repository);
+    useCase = new GetCategoryUseCase.UseCase(repository);
   });
 
   it("should throws error when entity not found", async () => {

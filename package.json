@@ -7,6 +7,11 @@
     "./src/@core",
     "./src/nest"
   ],
+  "scripts": {
+    "prestart:dev" : "npm run build -w core",
+    "start:dev": "npm run build:w -w core & npm run start:dev -w nest",
+    "test": "jest"
+  },
   "dependencies": {
     "acorn": "^8.8.2",
     "acorn-walk": "^8.2.0",
@@ -225,9 +230,6 @@
     "yocto-queue": "^0.1.0"
   },
   "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Gabrielfrahm/micro-video.git"

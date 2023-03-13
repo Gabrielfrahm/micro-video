@@ -29,7 +29,7 @@ describe("Category Unit Tests", () => {
     data.forEach((i) => {
       const category = new Category(i.props, i.id);
       expect(category.id).not.toBeNull();
-      console.log(category.uniqueEntityId instanceof UniqueEntityId);
+      // console.log(category.uniqueEntityId instanceof UniqueEntityId);
     });
   });
 
