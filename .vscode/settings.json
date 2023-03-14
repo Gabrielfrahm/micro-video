@@ -24,6 +24,7 @@
         "nestjs",
         "prestart",
         "seedwork",
+        "sqlite",
         "usecase",
         "usecases",
         "uuidv"

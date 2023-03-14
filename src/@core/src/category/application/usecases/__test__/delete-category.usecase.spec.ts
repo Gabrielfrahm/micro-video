@@ -1,5 +1,5 @@
 import { Category } from "../../../../category/domain/entities/category";
-import CategoryInMemoryRepository from "../../../infra/repository/category-in-memory.repository";
+import CategoryInMemoryRepository from "../../../infra/db/in-memory/category-in-memory.repository";
 import DeleteCategoryUseCase from "../delete-category.usecase";
 
 describe("delete category use case unit test", () => {
