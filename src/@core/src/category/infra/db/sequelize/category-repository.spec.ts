@@ -4,26 +4,14 @@ import UniqueEntityId from "#seedwork/domain/value-object/unique-entity-id.vo";
 import { DataType, Sequelize } from "sequelize-typescript";
 import { CategoryModel } from "./category-model";
 import { CategorySequelizeRepository } from "./category-repository";
+import { setupSequelize } from "../../../../@seedwork/infra/db/testing/helpers/db";
+
 describe("category sequelize repository unit test", () => {
-  let sequelize: Sequelize;
+  setupSequelize({ models: [CategoryModel] });
   let repository: CategorySequelizeRepository;
-  beforeAll(
-    () =>
-      (sequelize = new Sequelize({
-        dialect: "sqlite",
-        host: ":memory:",
-        logging: false,
-        models: [CategoryModel],
-      }))
-  );
 
   beforeEach(async () => {
     repository = new CategorySequelizeRepository(CategoryModel);
-    await sequelize.sync({ force: true });
-  });
-
-  afterAll(async () => {
-    await sequelize.close();
   });
 
   it("should be inserts a category", async () => {
@@ -69,5 +57,9 @@ describe("category sequelize repository unit test", () => {
     const entities = await repository.findAll();
     expect(entities).toHaveLength(1);
     expect(JSON.stringify(entities)).toBe(JSON.stringify([entity]));
+  });
+
+  it("should search categories", async () => {
+    await CategoryModel.factory().create();
   });
 });
