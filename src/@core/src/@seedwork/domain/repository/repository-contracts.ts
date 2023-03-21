@@ -122,9 +122,9 @@ export class SearchResult<E extends Entity, Filter = string> {
     this.sort_dir = props.sort_dir;
     this.filter = props.filter;
   }
-  toJSON() {
+  toJSON(forceEntity = false) {
     return {
-      items: this.items,
+      items: forceEntity ? this.items.map((item) => item.toJSON()) : this.items,
       total: this.total,
       current_page: this.current_page,
       per_page: this.per_page,
