@@ -1,14 +1,14 @@
-import { Category } from "../../../../category/domain/entities/category";
-import CategoryRepository from "../../../../category/domain/repository/category.repository";
-import CategoryInMemoryRepository from "../../../infra/db/in-memory/category-in-memory.repository";
-import ListCategoriesUseCase from "../list-categories.usecase";
+import { Category } from "../../../../../category/domain/entities/category";
+import CategoryRepository from "../../../../../category/domain/repository/category.repository";
+import CategoryInMemoryRepository from "../../../../infra/db/in-memory/category-in-memory.repository";
+import ListCategoriesUseCase from "../../list-categories.usecase";
 
 describe("list categories use case unit test", () => {
   let repository: CategoryInMemoryRepository;
   let useCase: ListCategoriesUseCase.UseCase;
 
   beforeEach(() => {
-    repository = new CategoryInMemoryRepository();
+    repository = new CategorySequelizeRepository(CategoryModel);
     useCase = new ListCategoriesUseCase.UseCase(repository);
   });
 

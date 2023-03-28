@@ -1,8 +1,8 @@
-import { Category } from "../../../../category/domain/entities/category";
-import NotFoundError from "../../../../@seedwork/domain/errors/not-found.error";
-import CategoryInMemoryRepository from "../../../infra/db/in-memory/category-in-memory.repository";
+import { Category } from "../../../../../category/domain/entities/category";
+import NotFoundError from "../../../../../@seedwork/domain/errors/not-found.error";
+import CategoryInMemoryRepository from "../../../../infra/db/in-memory/category-in-memory.repository";
 
-import GetCategoryUseCase from "../get-category.usecase";
+import GetCategoryUseCase from "../../get-category.usecase";
 
 describe("get category use case unit test", () => {
   let repository: CategoryInMemoryRepository;
