@@ -1,5 +1,5 @@
 import { CategorySequelize } from "#category/infra/db/sequelize/category-sequelize";
-import { setupSequelize } from "#seedwork/infra/db/testing/helpers/db";
+import { setupSequelize } from "../../../../../@seedwork/infra/db/testing/helpers/db";
 
 import CreateCategoryUseCase from "../../create-category.usecase";
 

@@ -1,8 +1,6 @@
 import { CategorySequelize } from "#category/infra/db/sequelize/category-sequelize";
-import { setupSequelize } from "#seedwork/infra/db/testing/helpers/db";
-import { Category } from "../../../../domain/entities/category";
-import CategoryInMemoryRepository from "../../../../infra/db/in-memory/category-in-memory.repository";
-import CreateCategoryUseCase from "../../create-category.usecase";
+import { setupSequelize } from "../../../../../@seedwork/infra/db/testing/helpers/db";
+
 import DeleteCategoryUseCase from "../../delete-category.usecase";
 const { CategoryModel, CategorySequelizeRepository } = CategorySequelize;
 

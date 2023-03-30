@@ -1,10 +1,7 @@
-import { Category } from "../../../../domain/entities/category";
 import NotFoundError from "../../../../../@seedwork/domain/errors/not-found.error";
-import CategoryInMemoryRepository from "../../../../infra/db/in-memory/category-in-memory.repository";
-
 import GetCategoryUseCase from "../../get-category.usecase";
 import { CategorySequelize } from "#category/infra/db/sequelize/category-sequelize";
-import { setupSequelize } from "#seedwork/infra/db/testing/helpers/db";
+import { setupSequelize } from "../../../../../@seedwork/infra/db/testing/helpers/db";
 const { CategoryModel, CategorySequelizeRepository } = CategorySequelize;
 
 describe("get category use case integration test", () => {

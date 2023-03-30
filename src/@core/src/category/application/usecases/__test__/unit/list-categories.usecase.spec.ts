@@ -8,7 +8,7 @@ describe("list categories use case unit test", () => {
   let useCase: ListCategoriesUseCase.UseCase;
 
   beforeEach(() => {
-    repository = new CategorySequelizeRepository(CategoryModel);
+    repository = new CategoryInMemoryRepository();
     useCase = new ListCategoriesUseCase.UseCase(repository);
   });
 
