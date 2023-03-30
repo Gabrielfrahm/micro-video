@@ -2,11 +2,12 @@ import { DynamicModule, Module } from '@nestjs/common';
 import {
   ConfigModule as NestConfigModule,
   ConfigModuleOptions,
+  ConfigService,
 } from '@nestjs/config';
 import { join } from 'path';
 import * as Joi from 'joi';
 
-type DB_SCHEMA_TYPE = {
+export type DB_SCHEMA_TYPE = {
   DB_CONNECTION: 'mysql' | 'sqlite';
   DB_HOST: string;
   DB_DATABASE: string;
@@ -39,6 +40,8 @@ export const CONFIG_DB_SCHEMA: Joi.StrictSchemaMap<DB_SCHEMA_TYPE> = {
   DB_LOGGING: Joi.boolean().required(),
   DB_AUTO_LOAD_MODELS: Joi.boolean().required(),
 };
+
+export type CONFIG_SCHEMA_TYPE = DB_SCHEMA_TYPE;
 
 @Module({})
 export class ConfigModule extends NestConfigModule {
