@@ -1,3 +1,5 @@
+const core_path = '<rootDir>/../../../node_modules/core/dist';
+
 export default {
   displayName: {
     name: 'nest',
@@ -14,5 +16,7 @@ export default {
   testEnvironment: 'node',
   moduleNameMapper: {
     '/core/(.*)$/': '<rootDir>/../../../node_modules/core/dist/$1',
+    '#seedwork/(.*)$': `${core_path}/@seedwork/$1`,
+    '#category/(.*)$': `${core_path}/category/$1`,
   },
 };

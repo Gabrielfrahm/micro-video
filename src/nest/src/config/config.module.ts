@@ -2,7 +2,6 @@ import { DynamicModule, Module } from '@nestjs/common';
 import {
   ConfigModule as NestConfigModule,
   ConfigModuleOptions,
-  ConfigService,
 } from '@nestjs/config';
 import { join } from 'path';
 import * as Joi from 'joi';
@@ -46,18 +45,17 @@ export type CONFIG_SCHEMA_TYPE = DB_SCHEMA_TYPE;
 @Module({})
 export class ConfigModule extends NestConfigModule {
   static forRoot(options: ConfigModuleOptions = {}): DynamicModule {
+    const { envFilePath, ...rest } = options;
     return super.forRoot({
       envFilePath: [
-        ...(Array.isArray(options.envFilePath)
-          ? options.envFilePath
-          : [options.envFilePath]),
+        ...(Array.isArray(envFilePath) ? envFilePath : [envFilePath]),
         join(__dirname, `../envs/.env.${process.env.NODE_ENV}`),
         join(__dirname, '../envs/.env'),
       ],
       validationSchema: Joi.object({
         ...CONFIG_DB_SCHEMA,
       }),
-      ...options,
+      ...rest,
     });
   }
 }

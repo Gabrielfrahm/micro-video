@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { getModelToken } from '@nestjs/sequelize';
 import {
   CreateCategoryUseCase,
