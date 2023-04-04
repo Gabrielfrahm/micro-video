@@ -1,5 +1,5 @@
 import { Category, CategoryRepository } from "#category/domain";
-import NotFoundError from "#seedwork/domain/errors/not-found.error";
+import { NotFoundError } from "#seedwork/domain/errors/not-found.error";
 import UniqueEntityId from "#seedwork/domain/value-object/unique-entity-id.vo";
 
 import { setupSequelize } from "../../../../@seedwork/infra/db/testing/helpers/db";

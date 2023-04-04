@@ -1,4 +1,4 @@
-import NotFoundError from "../../../../../@seedwork/domain/errors/not-found.error";
+import { NotFoundError } from "../../../../../@seedwork/domain/errors/not-found.error";
 import GetCategoryUseCase from "../../get-category.usecase";
 import { CategorySequelize } from "#category/infra/db/sequelize/category-sequelize";
 import { setupSequelize } from "../../../../../@seedwork/infra/db/testing/helpers/db";

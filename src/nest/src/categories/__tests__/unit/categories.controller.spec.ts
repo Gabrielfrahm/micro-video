@@ -5,9 +5,10 @@ import {
   UpdateCategoryUseCase,
 } from 'core/category/application';
 import { SortDirection } from 'core/@seedwork/domain';
-import { CategoriesController } from './categories.controller';
-import { CreateCategoryDto } from './dto/create-category.dto';
-import { UpdateCategoryDto } from './dto/update-category.dto';
+import { CategoriesController } from '../../categories.controller';
+import { CreateCategoryDto } from '../../dto/create-category.dto';
+import { UpdateCategoryDto } from '../../dto/update-category.dto';
+import { CategoryPresenter } from '../../presenter/category-presenter';
 
 describe('CategoriesController', () => {
   let controller: CategoriesController;
@@ -36,9 +37,11 @@ describe('CategoriesController', () => {
       description: 'some description',
       is_active: true,
     };
-    const result = await controller.create(input);
+    const presenter = await controller.create(input);
     expect(mockCreateUseCase.execute).toHaveBeenCalledWith(input);
-    expect(output).toEqual(result);
+    expect(presenter).toBeInstanceOf(CategoryPresenter);
+    expect(presenter).toStrictEqual(new CategoryPresenter(output));
+    // expect(output).toEqual(result);
   });
 
   it('should update a new category', async () => {
@@ -104,7 +107,7 @@ describe('CategoriesController', () => {
     const result = await controller.findOne(input.id);
     expect(controller.findOne(input.id)).toBeInstanceOf(Promise);
     expect(mockGetUseCase.execute).toBeCalledWith(input);
-    expect(result).toStrictEqual(output);
+    expect(result).toEqual(output);
   });
 
   it('should list all category', async () => {

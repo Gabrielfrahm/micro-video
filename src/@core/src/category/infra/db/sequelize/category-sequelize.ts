@@ -10,7 +10,7 @@ import {
 import { Category, CategoryRepository } from "#category/domain";
 import UniqueEntityId from "#seedwork/domain/value-object/unique-entity-id.vo";
 import { Op } from "sequelize";
-import NotFoundError from "#seedwork/domain/errors/not-found.error";
+import { NotFoundError } from "#seedwork/domain/errors/not-found.error";
 import { EntityValidationError, LoadEntityError } from "#seedwork/domain";
 
 export namespace CategorySequelize {

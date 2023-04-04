@@ -13,6 +13,7 @@
   "exports": {
     "./@seedwork/application": "./dist/@seedwork/application/index.js",
     "./@seedwork/domain": "./dist/@seedwork/domain/index.js",
+    "./@seedwork/infra": "./dist/@seedwork/infra/index.js",
     "./category/application": "./dist/category/application/index.js",
     "./category/domain": "./dist/category/domain/index.js",
     "./category/infra": "./dist/category/infra/index.js"
@@ -36,15 +37,6 @@
       ],
       "category/infra": [
         "./dist/category/infra/index.d.ts"
-      ],
-      "cast-member/application": [
-        "./dist/cast-member/application/index.d.ts"
-      ],
-      "cast-member/domain": [
-        "./dist/cast-member/domain/index.d.ts"
-      ],
-      "cast-member/infra": [
-        "./dist/cast-member/infra/index.d.ts"
       ]
     }
   },

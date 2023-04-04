@@ -5,7 +5,7 @@
 
 export default {
   displayName: {
-    name: "@core",
+    name: "core",
     color: "blue",
   },
   // All imported modules in your tests should be mocked automatically
