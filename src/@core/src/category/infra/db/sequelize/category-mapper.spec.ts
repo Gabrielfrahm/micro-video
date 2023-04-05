@@ -14,7 +14,7 @@ describe("Category model mapper unit test", () => {
       CategorySequelize.CategoryModelMapper.toEntity(model);
       fail("The category is valid, but it needs throws a LoadEntityError");
     } catch (e) {
-      expect(e).toBeInstanceOf(LoadEntityError);
+      expect(e instanceof LoadEntityError).toBeTruthy();
       expect(e.error).toMatchObject({
         name: [
           "name should not be empty",

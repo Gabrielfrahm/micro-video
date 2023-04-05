@@ -1,4 +1,4 @@
-import { Category } from "./category";
+import { Category } from "../category";
 
 import UniqueEntityId from "#seedwork/domain/value-object/unique-entity-id.vo";
 
