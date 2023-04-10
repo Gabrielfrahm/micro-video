@@ -10,7 +10,7 @@ import {
   ListCategoriesUseCase,
   UpdateCategoryUseCase,
 } from 'core/category/application';
-import { CategoryRepository } from 'core/category/domain';
+import { Category, CategoryRepository } from 'core/category/domain';
 import { CATEGORY_PROVIDERS } from '../../categories.providers';
 import { CategorySequelize } from 'core/category/infra';
 import { NotFoundError } from 'core/@seedwork/domain';

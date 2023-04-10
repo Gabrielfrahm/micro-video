@@ -12,11 +12,19 @@ export default {
     '^.+\\.(t|j)s$': '@swc/jest',
   },
   collectCoverageFrom: ['**/*.(t|j)s'],
-  coverageDirectory: '../coverage',
+  coverageDirectory: '../__coverage',
   testEnvironment: 'node',
   moduleNameMapper: {
-    '/core/(.*)$/': '<rootDir>/../../../node_modules/core/dist/$1',
+    '/core/(.*)$/': `${core_path}/$1`,
     '#seedwork/(.*)$': `${core_path}/@seedwork/$1`,
     '#category/(.*)$': `${core_path}/category/$1`,
+  },
+  coverageThreshold: {
+    global: {
+      statements: 80,
+      branches: 80,
+      functions: 80,
+      lines: 80,
+    },
   },
 };
